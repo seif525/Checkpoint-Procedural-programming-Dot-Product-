@@ -1,0 +1,29 @@
+ALGORITHM Checkpoint Procedural programming Dot Produc
+VAR produit : INTEGER; v1, v2  : ARRAY_OF INTEGER)
+VAR
+    i, j : INTEGER
+BEGIN
+    FOR i FROM 0 TO v1.length STEP  1 DO
+        FOR j FROM 0 TO v2.length STEP 1  DO
+            produit := v1[i] * v2[j];
+        END_FOR
+    END_FOR
+END
+FUNCTION verifProduit(produit) : STRING
+BEGIN
+    IF (produit = 0) THEN
+        RETURN "The two vectors are orthogonals"
+        ELSE
+        RETURN "The two vectors are not Orthogonals"
+    END_IF
+END
+ALGORITHM orthOrNot
+VAR
+    v1, v2 : ARRAY_OF INTEGER
+    produit : INTEGER;
+    msg := STRING;
+BEGIN
+    dot_product(produit, v1, v2)
+    msg := verifProduit(produit)
+    Write(msg)
+END
